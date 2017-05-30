@@ -47,6 +47,8 @@ module FrequencyAnalysis
     chi2 = 0.0
     chi_length = input.length - ignored
 
+    return Float::INFINITY if chi_length == 0
+
     ('A'..'Z').each do |char|
       observed = letter_count[char]
       expected = chi_length * ENGLISH_FREQUENCIES[char]
