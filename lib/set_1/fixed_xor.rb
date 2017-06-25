@@ -3,6 +3,7 @@ require_relative "frequency_analysis"
 
 class FixedXor
   def self.xor(left, right)
+    raise ArgumentError unless left.size == right.size
     left_bytes = left.bytes
     right_bytes = right.bytes
 

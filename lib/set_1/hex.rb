@@ -1,6 +1,6 @@
 module Hex
   def to_ascii
-    return self if self[/\H/]
+    raise "Non-hex value in string" if self[/\H/]
     [self].pack("H*")
   end
 
